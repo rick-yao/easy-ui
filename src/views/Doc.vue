@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import Topnav from './Topnav.vue';
 import {inject, Ref} from 'vue';
-const asideVisible  = inject<Ref<boolean>>('xxx')
+const asideVisible  = inject<Ref<boolean>>('asideVisible')
 console.log(asideVisible?.value+'doc')
 
 </script>
