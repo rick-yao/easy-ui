@@ -16,18 +16,19 @@ export default {
 
 <style lang="scss" scoped>
 .topnav {
-  background: aquamarine;
+  background: red;
   display: flex;
   padding: 16px;
-  justify-content: space-between;
-  align-items: center;
-  .logo{
-    padding-left: 30px;
+  > .logo {
+    max-width: 6em;
+    margin-right: auto;
   }
-  >ul{
+  > .menu {
     display: flex;
-    >li{
-      padding-right:50px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    > li {
+      margin: 0 1em;
     }
   }
 }
