@@ -1,13 +1,17 @@
 <template>
-<div>doc</div>
+  <Topnav/>
+  <div>doc</div>
 </template>
 
-<script>
+<script setup lang="ts">
+import Topnav from './Topnav.vue';
+
+</script>
+<script lang="ts">
 export default {
-  name: "Doc"
+  name:"Doc"
 }
 </script>
-
 <style scoped>
 
 </style>
