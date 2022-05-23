@@ -1,11 +1,17 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+<script  lang="ts">
+import {provide, ref} from 'vue';
+
+export default {
+  name:'App',
+  setup(){
+    const asideVisible = ref(false)
+    provide('xxx',asideVisible)
+  }
+}
+
 </script>
 
 <template>
-  <router-link to="/"></router-link>
-  <router-link to="/doc"></router-link>
   <router-view/>
 </template>
 
