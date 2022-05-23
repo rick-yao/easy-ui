@@ -1,10 +1,10 @@
 <template>
-  <div>rick component</div>
+<div>home</div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
-  name: "rick"
+  name: "Home"
 }
 </script>
 

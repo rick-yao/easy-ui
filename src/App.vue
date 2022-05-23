@@ -1,12 +1,11 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Rick from './components/Rick.vue'
 </script>
 
 <template>
-  <nav>导航 |<router-link to="/">rick |</router-link>
-  <router-link to="rick2">rick2</router-link></nav>
+<router-link to="/"> home </router-link>
+  <router-link to="/doc">doc</router-link>
   <router-view/>
 </template>
 
