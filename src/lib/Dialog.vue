@@ -1,17 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="gulu-dialog-overlay" @click="closeOnClickOverlay"></div>
-    <div class="gulu-dialog-wrapper">
-      <div class="gulu-dialog">
-        <header><slot name="title"/><span class="gulu-dialog-close" @click="close"></span>
-        </header>
-        <main><slot name="content"/></main>
-        <footer>
-          <Button @click="close">取消</Button>
-          <Button level="main" @click="ok">确认</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="gulu-dialog-overlay" @click="closeOnClickOverlay"></div>
+      <div class="gulu-dialog-wrapper">
+        <div class="gulu-dialog">
+          <header>
+            <slot name="title"/>
+            <span class="gulu-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot name="content"/>
+          </main>
+          <footer>
+            <Button @click="close">取消</Button>
+            <Button level="main" @click="ok">确认</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
@@ -44,12 +50,12 @@ export default {
       }
     };
     const ok = () => {
-      if (props.ok?.() !== false ) {
+      if (props.ok?.() !== false) {
         close();
       }
     };
 
-    return {close, closeOnClickOverlay,ok};
+    return {close, closeOnClickOverlay, ok};
   }
 };
 </script>
