@@ -1,48 +1,59 @@
 <template>
-  <button class="ui-button" :class=classes>
-    <slot/>
+  <button class="gulu-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="gulu-loadingIndicator"></span>
+    <slot />
   </button>
-
 </template>
-
-<script>
-import {computed} from "vue";
-
+<script lang="ts">
+import { computed } from "vue";
 export default {
   props: {
     theme: {
       type: String,
-      default: 'button',
+      default: "button",
     },
     size: {
       type: String,
-      default: 'normal'
+      default: "normal",
+    },
+    level: {
+      type: String,
+      default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props) {
-    const {theme, size} = props
+    const { theme, size, level } = props;
     const classes = computed(() => {
       return {
-        [`ui-theme-${theme}`]: theme,
-        [`ui-size-${size}`]: size,
-      }
-    })
-    return {classes}
+        [`gulu-theme-${theme}`]: theme,
+        [`gulu-size-${size}`]: size,
+        [`gulu-level-${level}`]: level,
+      };
+    });
+    return { classes };
   },
-  name: "Button"
-}
+};
 </script>
-
 <style lang="scss">
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
-.ui-button {
-  box-sizing: border-box;
+$red: red;
+$grey: grey;
+.gulu-button {
+  box-sizing: content-box;
   height: $h;
-  padding: 0 12px;
+  padding: 0 24px;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -53,6 +64,7 @@ $radius: 4px;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
+  transition: background 250ms;
   & + & {
     margin-left: 8px;
   }
@@ -67,7 +79,7 @@ $radius: 4px;
   &::-moz-focus-inner {
     border: 0;
   }
-  &.ui-theme-link {
+  &.gulu-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
@@ -76,7 +88,7 @@ $radius: 4px;
       color: lighten($blue, 10%);
     }
   }
-  &.ui-theme-text {
+  &.gulu-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -85,15 +97,92 @@ $radius: 4px;
       background: darken(white, 5%);
     }
   }
-  &.ui-size-big {
+  &.gulu-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
-  &.ui-size-small {
+  &.gulu-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
+  &.gulu-theme-button {
+    &.gulu-level-main {
+      background: $blue;
+      color: white;
+      border-color: $blue;
+      &:hover,
+      &:focus {
+        background: darken($blue, 10%);
+        border-color: darken($blue, 10%);
+      }
+    }
+    &.gulu-level-danger {
+      background: $red;
+      border-color: $red;
+      color: white;
+      &:hover,
+      &:focus {
+        background: darken($red, 10%);
+        border-color: darken($red, 10%);
+      }
+    }
+  }
+  &.gulu-theme-link {
+    &.gulu-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
+    }
+  }
+  &.gulu-theme-text {
+    &.gulu-level-main {
+      color: $blue;
+      &:hover,
+      &:focus {
+        color: darken($blue, 10%);
+      }
+    }
+    &.gulu-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
+    }
+  }
+  &.gulu-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.gulu-theme-link, &.gulu-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
+  }
+  > .gulu-loadingIndicator{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: gulu-spin 1s infinite linear;
+  }
+}
+@keyframes gulu-spin {
+  0%{transform: rotate(0deg)}
+  100%{transform: rotate(360deg)}
 }
 </style>
