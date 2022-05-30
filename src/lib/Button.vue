@@ -1,15 +1,33 @@
 <template>
-  <button class="gulu-button" :class="`theme-${theme}`"><slot/></button>
+  <button class="ui-button" :class=classes>
+    <slot/>
+  </button>
 
 </template>
 
 <script>
+import {computed} from "vue";
+
 export default {
-  props:{
-    theme:{
-      type:String,
-      default:'button',
+  props: {
+    theme: {
+      type: String,
+      default: 'button',
+    },
+    size: {
+      type: String,
+      default: 'normal'
     }
+  },
+  setup(props) {
+    const {theme, size} = props
+    const classes = computed(() => {
+      return {
+        [`ui-theme-${theme}`]: theme,
+        [`ui-size-${size}`]: size,
+      }
+    })
+    return {classes}
   },
   name: "Button"
 }
@@ -21,7 +39,8 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
-.gulu-button {
+.ui-button {
+  box-sizing: border-box;
   height: $h;
   padding: 0 12px;
   cursor: pointer;
@@ -44,6 +63,37 @@ $radius: 4px;
   }
   &:focus {
     outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  &.ui-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
+    }
+  }
+  &.ui-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
+  }
+  &.ui-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.ui-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 }
 </style>

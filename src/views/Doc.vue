@@ -64,7 +64,7 @@ console.log(asideVisible?.value + 'doc');
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+    background: white;
   }
 }
 
