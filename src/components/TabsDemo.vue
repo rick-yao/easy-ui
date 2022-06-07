@@ -1,5 +1,5 @@
 <template>
-<div>tabs示例</div>
+  <div>tabs示例</div>
   <h1>示例1</h1>
   <Tabs>
     <Tab title="导航1">内容1</Tab>
@@ -8,15 +8,16 @@
 </template>
 
 <script lang="ts">
-import  Tabs from '../lib/Tabs.vue'
-import  Tab from '../lib/Tab.vue'
+import Tabs from '../lib/Tabs.vue';
+import Tab from '../lib/Tab.vue';
+
 export default {
-  name: "TabsDemo",
-  components:{
+  name: 'TabsDemo',
+  components: {
     Tabs,
     Tab,
   }
-}
+};
 </script>
 
 <style scoped>
