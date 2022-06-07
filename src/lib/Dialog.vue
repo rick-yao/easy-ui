@@ -12,7 +12,7 @@
             <slot name="content"/>
           </main>
           <footer>
-            <Button @click="close">取消</Button>
+            <Button @click="cancel">取消</Button>
             <Button level="main" @click="ok">确认</Button>
           </footer>
         </div>
@@ -39,6 +39,9 @@ export default {
     ok: {
       type: Function
     },
+    cancel: {
+      type: Function
+    }
   },
   setup(props: any, context: any) {
     const close = () => {
@@ -51,6 +54,11 @@ export default {
     };
     const ok = () => {
       if (props.ok?.() !== false) {
+        close();
+      }
+    };
+    const cancel = () => {
+      if (props.cancel?.() !== false) {
         close();
       }
     };
