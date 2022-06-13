@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss">
 $h: 22px;
-$h2: $h - 4px;
+$h2: calc($h - 4px);
 button {
   height: $h;
   width: $h*2;
@@ -37,7 +37,7 @@ span {
   height: $h2;
   width: $h2;
   background: white;
-  border-radius: $h2 / 2;
+  border-radius: calc($h2 / 2);
   transition: left 0.5s;
 }
 
