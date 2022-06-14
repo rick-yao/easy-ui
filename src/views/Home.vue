@@ -25,7 +25,7 @@ export default {
 $border-radius: 4px;
 $color: #1bcac0;
 .topNavAndBanner{
-  background: linear-gradient(145deg, rgba(229,255,254,1) 0%, rgba(183,233,230,1) 100%);
+  background: linear-gradient(145deg, rgba(215,238,252,1) 0%, rgba(238,236,226,1) 100%);
 }
 .banner {
   color:#1bcac0;

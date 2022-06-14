@@ -7,7 +7,7 @@
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
-    <span class="toggleAside" @click="toggleAside" v-if="toggleMenuButtonVisible"></span>
+    <span class="toggleAside" @click="toggleAside" v-if="toggleMenuButtonVisible"><svg t="1655189853814" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5327" width="200" height="200"><path d="M905.2 144.9h-785c-31.3 0-56.7 25.6-56.7 57.3v7.7c0 31.6 25.4 36.4 56.7 36.4h785c31.3 0 56.7-4.7 56.7-36.4v-7.7c0-31.7-25.4-57.3-56.7-57.3zM800.7 459.8H120.2c-31.3 0-56.7 25.6-56.7 57.3v-13.2c0 31.6 25.4 57.3 56.7 57.3h680.5c31.3 0 56.7-25.6 56.7-57.3v13.2c0-31.6-25.4-57.3-56.7-57.3z m-104.4 315h-576c-31.3 0-56.7 25.6-56.7 57.3v7.7c0 31.6 25.4 36.4 56.7 36.4h576c31.3 0 56.7-4.7 56.7-36.4V832c0-31.6-25.4-57.2-56.7-57.2z" p-id="5328"></path></svg></span>
   </div>
 </template>
 
@@ -25,7 +25,6 @@ export default {
   name: 'Topnav',
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
-    console.log(asideVisible?.value + 'topnav');
     const toggleAside = () => {
       asideVisible!.value = !asideVisible?.value;
     };
@@ -70,12 +69,10 @@ $color: #1bcac0;
   }
 
   > .toggleAside {
-    width: 24px;
-    height: 24px;
-    background: red;
     position: absolute;
     left: 16px;
     top: 50%;
+    background: inherit;
     transform: translateY(-50%);
     display: none;
   }

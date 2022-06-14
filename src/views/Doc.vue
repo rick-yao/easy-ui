@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Topnav class="nav toggleMenuButtonVisible"/>
+    <Topnav class="nav" toggle-menu-button-visible/>
     <div class="content">
       <aside v-if="asideVisible">
         <h2>组件列表</h2>
@@ -31,7 +31,6 @@ import Topnav from './Topnav.vue';
 import {inject, Ref} from 'vue';
 
 const asideVisible = inject<Ref<boolean>>('asideVisible');
-console.log(asideVisible?.value + 'doc');
 
 </script>
 
@@ -45,6 +44,9 @@ console.log(asideVisible?.value + 'doc');
   }
 
   > .content {
+    >aside{
+      z-index: 5;
+    }
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
