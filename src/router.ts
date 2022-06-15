@@ -6,12 +6,18 @@ import Button from './components/ButtonDemo.vue'
 import Dialog from './components/DialogDemo.vue'
 import Tabs from './components/TabsDemo.vue'
 import DocDemo from './components/DocDemo.vue'
+import Started from './views/Started.vue'
+import Install from './views/Install.vue'
+import Intro from './views/Intro.vue'
 
 const routes: RouteRecordRaw[] = [
     {path: '/', component: Home},
     {
         path: '/doc', component: Doc, children: [
             {path:'',component:DocDemo},
+            {path:'started',component:Started},
+            {path:'intro',component:Intro},
+            {path:'install',component:Install},
             {path: 'switch', component: Switch},
             {path: 'button', component: Button},
             {path: 'dialog', component: Dialog},
