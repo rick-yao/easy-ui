@@ -34,8 +34,8 @@ import Button from '../lib/Button.vue'
 import {ref} from "vue";
 import Switch1Demo from './Switch1.demo.vue'
 import Switch2Demo from './Switch2.demo.vue'
-import Prism from 'prismjs'
-import PrismCss from 'prismjs/themes/prism.css'
+
+
 
 let SwitchDemo1 = ''
 
@@ -44,7 +44,7 @@ export default {
   components: {Switch, Button,Switch1Demo,Switch2Demo},
   setup() {
     const bool = ref(true)
-    return {bool,Prism,PrismCss}
+    return {bool}
   }
 }
 </script>
