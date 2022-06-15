@@ -22,7 +22,7 @@
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre class="language-html" ><code v-html=""></code></pre>
+        <pre class="language-html" v-html="Prism.highlight(code,Prism.languages.html,'html')"></pre>
       </div>
     </div>
   </div>
@@ -34,16 +34,15 @@ import Button from '../lib/Button.vue'
 import {ref} from "vue";
 import Switch1Demo from './Switch1.demo.vue'
 import Switch2Demo from './Switch2.demo.vue'
-
-
-let SwitchDemo1 = ''
-
+import Prism from 'prismjs'
+import 'prismjs/themes/prism.css'
+const code = ` &lt;Switch v-model:value="bool" /&gt;`
 export default {
   name: "SwitchDemo",
   components: {Switch, Button,Switch1Demo,Switch2Demo},
   setup() {
     const bool = ref(true)
-    return {bool}
+    return {bool , Prism,code}
   }
 }
 </script>
