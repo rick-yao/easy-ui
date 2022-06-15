@@ -22,7 +22,7 @@
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre class="language-html" v-html="Prism.highlight()"></pre>
+        <pre class="language-html" ><code v-html=""></code></pre>
       </div>
     </div>
   </div>
@@ -34,7 +34,6 @@ import Button from '../lib/Button.vue'
 import {ref} from "vue";
 import Switch1Demo from './Switch1.demo.vue'
 import Switch2Demo from './Switch2.demo.vue'
-
 
 
 let SwitchDemo1 = ''
