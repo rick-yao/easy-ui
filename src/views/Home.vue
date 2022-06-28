@@ -57,7 +57,7 @@
 </template>
 
 <script setup lang="ts">
-import Topnav from './topnav.vue';
+import Topnav from './Topnav.vue';
 </script>
 <script lang="ts">
 export default {
