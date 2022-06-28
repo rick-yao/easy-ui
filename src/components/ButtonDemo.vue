@@ -1,5 +1,5 @@
 <template>
-  <div>Button 示例</div>
+  <h1>Button 示例</h1>
   <h1>示例1</h1>
   <Demo :component='Button1Demo' title="常规用法" base64="PHRlbXBsYXRlPgogIDxkaXY+CiAgICA8QnV0dG9uPuS9oOWlvTwvQnV0dG9uPgogICAgPEJ1dHRvbiB0aGVtZT0ibGluayI+5L2g5aW9PC9CdXR0b24+CiAgICA8QnV0dG9uIHRoZW1lPSJ0ZXh0Ij7kvaDlpb08L0J1dHRvbj4KICA8L2Rpdj4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQgbGFuZz0idHMiPgppbXBvcnQgQnV0dG9uIGZyb20gIi4uL2xpYi9CdXR0b24udnVlIjsKZXhwb3J0IGRlZmF1bHQgewogIGNvbXBvbmVudHM6IHsKICAgIEJ1dHRvbgogIH0KfQo8L3NjcmlwdD4="/>
   <h1>示例2</h1>
@@ -12,7 +12,6 @@
   <Demo :component="Button5Demo" title="支持显示加载中" base64="PHRlbXBsYXRlPgogIDxkaXY+CiAgICA8QnV0dG9uIGxvYWRpbmc+5Yqg6L295LitPC9CdXR0b24+CiAgICA8QnV0dG9uPuWKoOi9veWujOavlTwvQnV0dG9uPgogIDwvZGl2Pgo8L3RlbXBsYXRlPgoKPHNjcmlwdCBsYW5nPSJ0cyI+CmltcG9ydCBCdXR0b24gZnJvbSAiLi4vbGliL0J1dHRvbi52dWUiOwpleHBvcnQgZGVmYXVsdCB7CiAgY29tcG9uZW50czogewogICAgQnV0dG9uCiAgfQp9Cjwvc2NyaXB0Pg==" />
 </template>
 <script lang="ts">
-import Button from "../lib/Button.vue";
 import Button1Demo from '../demoList/Button1.demo.vue';
 import Button2Demo from '../demoList/Button2.demo.vue';
 import Button3Demo from '../demoList/Button3.demo.vue';
@@ -20,7 +19,7 @@ import Button4Demo from '../demoList/Button4.demo.vue';
 import Button5Demo from '../demoList/Button5.demo.vue';
 import Demo from './Demo.vue';
 export default {
-  components: { Button ,Button1Demo ,Demo ,Button4Demo,Button5Demo,Button3Demo,Button2Demo},
+  components: { Button1Demo ,Demo ,Button4Demo,Button5Demo,Button3Demo,Button2Demo},
   setup() {
 
     return { Button1Demo,Button4Demo,Button5Demo,Button3Demo,Button2Demo};

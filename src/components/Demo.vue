@@ -34,7 +34,6 @@ export default {
   },
   setup(props:any,context:any) {
     const code = Base64.decode(props.base64)
-    console.log(code);
     const codeVisible = ref(false)
     return {
       code,

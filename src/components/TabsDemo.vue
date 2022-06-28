@@ -1,29 +1,19 @@
 <template>
-  <div>tabs示例</div>
+  <h1>tabs示例</h1>
   <h1>示例1</h1>
-  <Tabs v-model:selected="x">
-    <Tab title="导航1">内容1</Tab>
-    <Tab title="导航222222">内容2</Tab>
-  </Tabs>
+  <Demo :component="Tabs1Demo" title="常规用法" base64="PHRlbXBsYXRlPgogIDxUYWJzIHYtbW9kZWw6c2VsZWN0ZWQ9IngiPgogICAgPFRhYiB0aXRsZT0i5a+86IiqMSI+5YaF5a65MTwvVGFiPgogICAgPFRhYiB0aXRsZT0i5a+86IiqMiI+5YaF5a65MjwvVGFiPgogIDwvVGFicz4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQgbGFuZz0idHMiPgppbXBvcnQgVGFicyBmcm9tICcuLi9saWIvVGFicy52dWUnCmltcG9ydCBUYWIgZnJvbSAnLi4vbGliL1RhYi52dWUnCmltcG9ydCB7CiAgcmVmCn0gZnJvbSAndnVlJwpleHBvcnQgZGVmYXVsdCB7CiAgY29tcG9uZW50czogewogICAgVGFicywKICAgIFRhYgogIH0sCiAgc2V0dXAoKSB7CiAgICBjb25zdCB4ID0gcmVmKCflr7zoiKoyJykKICAgIHJldHVybiB7CiAgICAgIHgKICAgIH0KICB9Cn0KPC9zY3JpcHQ+"/>
 </template>
 
 <script lang="ts">
-import Tabs from '../lib/Tabs.vue';
-import Tab from '../lib/Tab.vue';
-import {ref} from 'vue';
+import Demo from './Demo.vue';
+import Tabs1Demo from '../demoList/Tabs1.demo.vue';
 export default {
   name: 'TabsDemo',
   components: {
-    Tabs,
-    Tab,
+    Demo
   },
   setup(){
-    const x = ref('导航1')
-    return {x}
+    return {Tabs1Demo}
   }
 };
 </script>
-
-<style scoped>
-
-</style>

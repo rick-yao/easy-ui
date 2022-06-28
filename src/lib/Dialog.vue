@@ -63,7 +63,7 @@ export default {
       }
     };
 
-    return {close, closeOnClickOverlay, ok};
+    return {close, closeOnClickOverlay, ok,cancel};
   }
 };
 </script>

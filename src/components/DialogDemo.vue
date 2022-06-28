@@ -1,55 +1,23 @@
 <template>
-  <div>dialog示例</div>
+  <h1>dialog示例</h1>
   <h1>示例1</h1>
-  <Button @click="toggle" >toggle</Button>
-  <Dialog v-model:visible="x" :closeOnClickOverlay="true" :ok="f1" :cancel="f2" >
-    <template v-slot:title><strong>加粗标题</strong></template>
-    <template v-slot:content><strong>样式内容</strong></template>
-  </Dialog>
+  <Demo :component="Dialog1Demo" title="常规使用" base64="PHRlbXBsYXRlPgogIDxkaXY+CiAgICA8QnV0dG9uIEBjbGljaz0idG9nZ2xlIj7miZPlvIDlr7nor53moYY8L0J1dHRvbj4KICAgIDxEaWFsb2cgdi1tb2RlbDp2aXNpYmxlPSJ4IiA6Y2xvc2VPbkNsaWNrT3ZlcmxheT0idHJ1ZSIgOm9rPSJmMSIgOmNhbmNlbD0iZjIiPgogICAgICA8dGVtcGxhdGUgdi1zbG90OmNvbnRlbnQ+CiAgICAgICAgPHN0cm9uZz5oaTwvc3Ryb25nPgogICAgICAgIDxkaXY+aGkyPC9kaXY+CiAgICAgIDwvdGVtcGxhdGU+CiAgICAgIDx0ZW1wbGF0ZSB2LXNsb3Q6dGl0bGU+CiAgICAgICAgPHN0cm9uZz7liqDnspfnmoTmoIfpopg8L3N0cm9uZz4KICAgICAgPC90ZW1wbGF0ZT4KICAgIDwvRGlhbG9nPgogIDwvZGl2Pgo8L3RlbXBsYXRlPgoKPHNjcmlwdCBsYW5nPSJ0cyI+CmltcG9ydCBEaWFsb2cgZnJvbSAnLi4vbGliL0RpYWxvZy52dWUnOwppbXBvcnQgQnV0dG9uIGZyb20gJy4uL2xpYi9CdXR0b24udnVlJzsKaW1wb3J0IHsKICByZWYKfSBmcm9tICd2dWUnOwoKZXhwb3J0IGRlZmF1bHQgewogIGNvbXBvbmVudHM6IHsKICAgIERpYWxvZywKICAgIEJ1dHRvbgogIH0sCiAgc2V0dXAoKSB7CiAgICBjb25zdCB4ID0gcmVmKGZhbHNlKTsKICAgIGNvbnN0IHRvZ2dsZSA9ICgpID0+IHsKICAgICAgeC52YWx1ZSA9ICF4LnZhbHVlOwogICAgfTsKICAgIGNvbnN0IGYxID0gKCkgPT4gewogICAgICBjb25zb2xlLmxvZygnb2snKTsKICAgIH07CiAgICBjb25zdCBmMiA9ICgpID0+IHsKICAgICAgY29uc29sZS5sb2coJ2NhbmNlbCcpOwogICAgfTsKICAgIHJldHVybiB7CiAgICAgIHgsCiAgICAgIHRvZ2dsZSwKICAgICAgZjEsCiAgICAgIGYyCiAgICB9OwogIH0KfTsKPC9zY3JpcHQ+"/>
   <h1>示例2</h1>
-  <Button @click="showDialog">show</Button>
+  <Demo :component="Dialog2Demo" title="支持一键打开" base64="PHRlbXBsYXRlPgogIDxkaXY+CiAgICA8QnV0dG9uIEBjbGljaz0ic2hvd0RpYWxvZyI+5omT5byA5a+56K+d5qGGPC9CdXR0b24+CiAgPC9kaXY+CjwvdGVtcGxhdGU+Cgo8c2NyaXB0IGxhbmc9InRzIj4KaW1wb3J0IEJ1dHRvbiBmcm9tICcuLi9saWIvQnV0dG9uLnZ1ZScKaW1wb3J0IHsKICBoCn0gZnJvbSAndnVlJwppbXBvcnQgewogIG9wZW5EaWFsb2cKfSBmcm9tICcuLi9saWIvb3BlbkRpYWxvZycKZXhwb3J0IGRlZmF1bHQgewogIGNvbXBvbmVudHM6IHsKICAgIEJ1dHRvbgogIH0sCiAgc2V0dXAoKSB7CiAgICBjb25zdCBzaG93RGlhbG9nID0gKCkgPT4gewogICAgICBvcGVuRGlhbG9nKHsKICAgICAgICB0aXRsZTogaCgnc3Ryb25nJywge30sICfmoIfpopgnKSwKICAgICAgICBjb250ZW50OiAn5L2g5aW9JywKICAgICAgICBvaygpIHsKICAgICAgICAgIGNvbnNvbGUubG9nKCdvaycpCiAgICAgICAgfSwKICAgICAgICBjYW5jZWwoKSB7CiAgICAgICAgICBjb25zb2xlLmxvZygnY2FuY2VsJykKICAgICAgICB9CiAgICAgIH0pCiAgICB9CiAgICByZXR1cm4gewogICAgICBzaG93RGlhbG9nCiAgICB9CiAgfQp9Cjwvc2NyaXB0Pg=="/>
 </template>
 
 <script lang="ts">
-import Dialog from '../lib/Dialog.vue';
-import Button from '../lib/Button.vue';
-import {ref ,h} from 'vue';
-import {openDialog} from '../lib/openDialog';
+import Dialog1Demo from '../demoList/Dialog1.demo.vue';
+import Dialog2Demo from '../demoList/Dialog2.demo.vue';
+import Demo from './Demo.vue';
 export default {
   name: "DialogDemo",
   components:{
-    Button,
-    Dialog
+    Demo
   },
   setup(){
-    const x = ref(false)
-    const toggle = ()=>{
-      x.value = !x.value
-    }
-    const f1 = ()=>{
-      console.log(1)
-    }
-    const f2 = ()=>{
-      console.log(2)
-    }
-    const showDialog = () => {
-      openDialog({
-        title: h('strong', {}, '标题'),
-        content: '你好',
-        ok() {
-          console.log('ok')
-        },
-        cancel() {
-          console.log('cancel')
-        }
-      })
-    }
-    return {x,toggle,f1,f2,showDialog}
+    return {Dialog1Demo,Dialog2Demo}
   }
 
 }
 </script>
-
-<style scoped>
-
-</style>
