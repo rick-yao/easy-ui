@@ -28,13 +28,14 @@ export default {
   setup(props: any, context: any) {
     let navItem = <HTMLDivElement[]>[];
     let indicator = <HTMLDivElement[]>[];
+    //@ts-ignore
     const container = ref<HTMLDivElement>(null);
-    const setNavItem = el => {
+    const setNavItem = (el:any)=> {
       if (el) {
         navItem.push(el);
       }
     };
-    const setIndicator = el => {
+    const setIndicator = (el:any) => {
       if (el) {
         indicator.push(el);
       }
