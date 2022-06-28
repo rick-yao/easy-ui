@@ -1,69 +1,29 @@
 <template>
   <div>Button 示例</div>
   <h1>示例1</h1>
-  <div>
-    <Button @click="onClick">你好</Button>
-    <Button theme="button">你好</Button>
-    <Button theme="link">你好</Button>
-    <Button theme="text">你好</Button>
-  </div>
+  <Demo :component='Button1Demo' title="常规用法" base64="PHRlbXBsYXRlPgogIDxkaXY+CiAgICA8QnV0dG9uPuS9oOWlvTwvQnV0dG9uPgogICAgPEJ1dHRvbiB0aGVtZT0ibGluayI+5L2g5aW9PC9CdXR0b24+CiAgICA8QnV0dG9uIHRoZW1lPSJ0ZXh0Ij7kvaDlpb08L0J1dHRvbj4KICA8L2Rpdj4KPC90ZW1wbGF0ZT4KCjxzY3JpcHQgbGFuZz0idHMiPgppbXBvcnQgQnV0dG9uIGZyb20gIi4uL2xpYi9CdXR0b24udnVlIjsKZXhwb3J0IGRlZmF1bHQgewogIGNvbXBvbmVudHM6IHsKICAgIEJ1dHRvbgogIH0KfQo8L3NjcmlwdD4="/>
   <h1>示例2</h1>
-  <div>
-    <div>
-      <Button size="big">大大大</Button>
-      <Button>普普通</Button>
-      <Button size="small">小小小</Button>
-    </div>
-    <div>
-      <Button theme="link" size="big">大大大</Button>
-      <Button theme="link">普普通</Button>
-      <Button size="small" theme="link">小小小</Button>
-    </div>
-    <div>
-      <Button size="big" theme="text">大大大</Button>
-      <Button theme="text">普普通</Button>
-      <Button size="small" theme="text">小小小</Button>
-    </div>
-  </div>
+  <Demo :component="Button2Demo" title="支持 size" base64="PHRlbXBsYXRlPgogIDxkaXY+CiAgICA8ZGl2PgogICAgICA8QnV0dG9uIHNpemU9ImJpZyI+5aSn5aSn5aSnPC9CdXR0b24+CiAgICAgIDxCdXR0b24+5pmu5pmu6YCaPC9CdXR0b24+CiAgICAgIDxCdXR0b24gc2l6ZT0ic21hbGwiPuWwj+Wwj+WwjzwvQnV0dG9uPgogICAgPC9kaXY+CiAgICA8ZGl2PgogICAgICA8QnV0dG9uIHRoZW1lPSJsaW5rIiBzaXplPSJiaWciPuWkp+Wkp+WkpzwvQnV0dG9uPgogICAgICA8QnV0dG9uIHRoZW1lPSJsaW5rIj7mma7mma7pgJo8L0J1dHRvbj4KICAgICAgPEJ1dHRvbiBzaXplPSJzbWFsbCIgdGhlbWU9ImxpbmsiPuWwj+Wwj+WwjzwvQnV0dG9uPgogICAgPC9kaXY+CiAgICA8ZGl2PgogICAgICA8QnV0dG9uIHNpemU9ImJpZyIgdGhlbWU9InRleHQiPuWkp+Wkp+WkpzwvQnV0dG9uPgogICAgICA8QnV0dG9uIHRoZW1lPSJ0ZXh0Ij7mma7mma7pgJo8L0J1dHRvbj4KICAgICAgPEJ1dHRvbiBzaXplPSJzbWFsbCIgdGhlbWU9InRleHQiPuWwj+Wwj+WwjzwvQnV0dG9uPgogICAgPC9kaXY+CiAgPC9kaXY+CjwvdGVtcGxhdGU+Cgo8c2NyaXB0IGxhbmc9InRzIj4KaW1wb3J0IEJ1dHRvbiBmcm9tICIuLi9saWIvQnV0dG9uLnZ1ZSI7CmV4cG9ydCBkZWZhdWx0IHsKICBjb21wb25lbnRzOiB7CiAgICBCdXR0b24KICB9Cn0KPC9zY3JpcHQ+"/>
   <h1>示例3</h1>
-  <div>
-    <div>
-      <Button level="main">主要按钮</Button>
-      <Button>普通按钮</Button>
-      <Button level="danger">危险按钮</Button>
-    </div>
-    <div>
-      <Button theme="link" level="main">主要链接按钮</Button>
-      <Button theme="link">普通链接按钮</Button>
-      <Button theme="link" level="danger">危险链接按钮</Button>
-    </div>
-    <div>
-      <Button theme="text" level="main">主要文字按钮</Button>
-      <Button theme="text">普通文字按钮</Button>
-      <Button theme="text" level="danger">危险文字按钮</Button>
-    </div>
-  </div>
+  <Demo :component="Button3Demo" title="支持 level"  base64="PHRlbXBsYXRlPgogIDxkaXY+CiAgICA8ZGl2PgogICAgICA8QnV0dG9uIGxldmVsPSJtYWluIj7kuLvopoHmjInpkq48L0J1dHRvbj4KICAgICAgPEJ1dHRvbj7mma7pgJrmjInpkq48L0J1dHRvbj4KICAgICAgPEJ1dHRvbiBsZXZlbD0iZGFuZ2VyIj7ljbHpmanmjInpkq48L0J1dHRvbj4KICAgIDwvZGl2PgogICAgPGRpdj4KICAgICAgPEJ1dHRvbiB0aGVtZT0ibGluayIgbGV2ZWw9Im1haW4iPuS4u+imgemTvuaOpeaMiemSrjwvQnV0dG9uPgogICAgICA8QnV0dG9uIHRoZW1lPSJsaW5rIj7mma7pgJrpk77mjqXmjInpkq48L0J1dHRvbj4KICAgICAgPEJ1dHRvbiB0aGVtZT0ibGluayIgbGV2ZWw9ImRhbmdlciI+5Y2x6Zmp6ZO+5o6l5oyJ6ZKuPC9CdXR0b24+CiAgICA8L2Rpdj4KICAgIDxkaXY+CiAgICAgIDxCdXR0b24gdGhlbWU9InRleHQiIGxldmVsPSJtYWluIj7kuLvopoHmloflrZfmjInpkq48L0J1dHRvbj4KICAgICAgPEJ1dHRvbiB0aGVtZT0idGV4dCI+5pmu6YCa5paH5a2X5oyJ6ZKuPC9CdXR0b24+CiAgICAgIDxCdXR0b24gdGhlbWU9InRleHQiIGxldmVsPSJkYW5nZXIiPuWNsemZqeaWh+Wtl+aMiemSrjwvQnV0dG9uPgogICAgPC9kaXY+CiAgPC9kaXY+CjwvdGVtcGxhdGU+Cgo8c2NyaXB0IGxhbmc9InRzIj4KaW1wb3J0IEJ1dHRvbiBmcm9tICIuLi9saWIvQnV0dG9uLnZ1ZSI7CmV4cG9ydCBkZWZhdWx0IHsKICBjb21wb25lbnRzOiB7CiAgICBCdXR0b24KICB9Cn0KPC9zY3JpcHQ+"/>
   <h1>示例4</h1>
-  <div>
-    <Button disabled>禁用按钮</Button>
-    <Button theme="link" disabled>禁用链接按钮</Button>
-    <Button theme="text" disabled>禁用按钮</Button>
-  </div>
+  <Demo :component="Button4Demo" title="支持 disabled" base64="PHRlbXBsYXRlPgogIDxCdXR0b24gZGlzYWJsZWQ+56aB55So5oyJ6ZKuPC9CdXR0b24+CiAgPEJ1dHRvbiB0aGVtZT0ibGluayIgZGlzYWJsZWQ+56aB55So6ZO+5o6l5oyJ6ZKuPC9CdXR0b24+CiAgPEJ1dHRvbiB0aGVtZT0idGV4dCIgZGlzYWJsZWQ+56aB55So5oyJ6ZKuPC9CdXR0b24+CjwvdGVtcGxhdGU+Cgo8c2NyaXB0IGxhbmc9InRzIj4KaW1wb3J0IEJ1dHRvbiBmcm9tICIuLi9saWIvQnV0dG9uLnZ1ZSI7CmV4cG9ydCBkZWZhdWx0IHsKICBjb21wb25lbnRzOiB7CiAgICBCdXR0b24KICB9Cn0KPC9zY3JpcHQ+"/>
   <h1>示例5</h1>
-  <div>
-    <Button loading>加载中</Button>
-    <Button>加载完毕</Button>
-  </div>
+  <Demo :component="Button5Demo" title="支持显示加载中" base64="PHRlbXBsYXRlPgogIDxkaXY+CiAgICA8QnV0dG9uIGxvYWRpbmc+5Yqg6L295LitPC9CdXR0b24+CiAgICA8QnV0dG9uPuWKoOi9veWujOavlTwvQnV0dG9uPgogIDwvZGl2Pgo8L3RlbXBsYXRlPgoKPHNjcmlwdCBsYW5nPSJ0cyI+CmltcG9ydCBCdXR0b24gZnJvbSAiLi4vbGliL0J1dHRvbi52dWUiOwpleHBvcnQgZGVmYXVsdCB7CiAgY29tcG9uZW50czogewogICAgQnV0dG9uCiAgfQp9Cjwvc2NyaXB0Pg==" />
 </template>
 <script lang="ts">
 import Button from "../lib/Button.vue";
+import Button1Demo from '../demoList/Button1.demo.vue';
+import Button2Demo from '../demoList/Button2.demo.vue';
+import Button3Demo from '../demoList/Button3.demo.vue';
+import Button4Demo from '../demoList/Button4.demo.vue';
+import Button5Demo from '../demoList/Button5.demo.vue';
+import Demo from './Demo.vue';
 export default {
-  components: { Button },
+  components: { Button ,Button1Demo ,Demo ,Button4Demo,Button5Demo,Button3Demo,Button2Demo},
   setup() {
-    const onClick = () => {
-      console.log("hi");
-    };
-    return { onClick };
+
+    return { Button1Demo,Button4Demo,Button5Demo,Button3Demo,Button2Demo};
   },
 };
 </script>

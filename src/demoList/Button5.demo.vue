@@ -1,13 +1,15 @@
 <template>
-
+  <div>
+    <Button loading>加载中</Button>
+    <Button>加载完毕</Button>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
+import Button from "../lib/Button.vue";
 export default {
-  name: "Button5.demo"
+  components: {
+    Button
+  }
 }
 </script>
-
-<style scoped>
-
-</style>
