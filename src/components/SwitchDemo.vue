@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Switch from '../lib/Switch.vue'
 import {ref} from "vue";
 import Switch1Demo from './Switch1.demo.vue'

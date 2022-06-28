@@ -2,7 +2,7 @@
 <div>docdemo default</div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "DocDemo"
 }

@@ -2,7 +2,7 @@
   <button :class="{checked:value}" @click="toggle"><span></span></button>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "Switch",
   props: {
