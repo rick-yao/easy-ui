@@ -1,5 +1,5 @@
 <template>
-  <article class="markdown-body">
+  <article class="markdown-body-light">
     <h1>开始使用</h1>
     <p>安装完成后在你的代码中写入下面的代码</p>
     <pre><code>import {Button, Tabs, Switch, Dialog} from "easy-ui"</code></pre>
