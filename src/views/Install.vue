@@ -1,5 +1,5 @@
 <template>
-  <article class="markdown-body-light">
+  <article class="markdown-body">
     <h1>安装</h1>
     <p>打开终端运行以下指令</p>
     <pre><code>npm install easy-ui</code></pre>
@@ -15,5 +15,6 @@ export default {
 </script>
 
 <style scoped>
+@import "../../node_modules/github-markdown-css/github-markdown-light.css";
 
 </style>

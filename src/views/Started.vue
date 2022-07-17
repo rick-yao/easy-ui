@@ -1,5 +1,5 @@
 <template>
-  <article class="markdown-body-light">
+  <article class="markdown-body">
     <h1>开始使用</h1>
     <p>安装完成后在你的代码中写入下面的代码</p>
     <pre><code>import {Button, Tabs, Switch, Dialog} from "easy-ui"</code></pre>
@@ -14,5 +14,6 @@ export default {
 </script>
 
 <style scoped>
+@import "../../node_modules/github-markdown-css/github-markdown-light.css";
 
 </style>
