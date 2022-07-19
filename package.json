@@ -1,7 +1,9 @@
 {
-  "name": "easy-ui",
-  "private": true,
-  "version": "0.0.0",
+  "name": "easy-ui-rick",
+  "private": false,
+  "version": "0.0.1",
+  "files": ["dist/lib/*"],
+  "main": "dist/lib/gulu.js",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -16,6 +18,10 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
+    "rollup-plugin-scss": "^3.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.52.1",
     "scss": "^0.2.4",
     "typescript": "^4.5.4",
