@@ -10,5 +10,5 @@ updates:
       time: '16:00'
       timezone: "Asia/Shanghai"
     target-branch: "dev"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 0
 
