@@ -22,7 +22,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript": "^1.0.1",
     "rollup-plugin-vue": "^6.0.0",
-    "sass": "^1.52.1",
+    "sass": "^1.54.4",
     "scss": "^0.2.4",
     "typescript": "^4.5.4",
     "vite": "^2.9.9",
