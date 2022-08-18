@@ -105,6 +105,7 @@ aside {
       display: block;
       padding: 4px 16px;
       text-decoration: none;
+      color:black;
     }
 
     .router-link-active {
